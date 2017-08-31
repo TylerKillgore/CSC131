@@ -7,14 +7,16 @@ Write a program, which asks user "Give me an integer", then take users' input.
 Then the program should print "Even" or "Odd" based on the input.
 """
 
-answer = input("Give me an integer: ")
-answer = int(answer)
 
-if(answer%2 == 0):
+def even_or_odd():
+    if (answer % 2 == 0):
         print("Even")
-else:
+    else:
         print("Odd")
 print("--"*10)
+
+answer = int(input("Give me an integer: "))
+even_or_odd()
 
 """
 02. Course levels
@@ -26,6 +28,30 @@ You can assume that the input is always a string of 3 letters followed by 3 digi
 If the input is a course number beyond [100, 499], your program should print "I don't know this course".
 Hint: the key is to access a specific character with a correct index. You don't need to use chained or nested if-else.
 """
+
+
+def calculate_course_year():
+    course_year = "I don't know this course"
+
+    if int(course_number) == 1:
+        course_year = "Freshman course"
+    if int(course_number) == 2:
+        course_year = "Sophomore course"
+    if int(course_number) == 3:
+        course_year = "Junior course"
+    if int(course_number) == 4:
+        course_year = "Senior course"
+    if int(course_number) < 1 or int(course_number) > 4:
+        course_year = "I don't know this course"
+    print (course_year)
+
+course = input("Input course number: ")
+course_number = (course[3])#extract [3] from course string
+
+if len(course) > 7:
+    course_year = "I don't know this course"
+else:
+    calculate_course_year()
 
 print("--"*10)
 
@@ -45,6 +71,10 @@ if b >= a and b <= c:
 if not (b < a or b > c):
 	print("in approach 2: b is between a and c")
 
+print("The approaches are not completely similar because in approach one 'b' is checked for equivalency to 'a' and 'c' \nwhereas "
+      "approach 2 only checks less than or greater than. \nHowever, given that 'b' could not equal both 'a' and 'c' at the same time unless"
+      "\nall three were equal the approaches come to the same conclusion."
+      "the overall result remains the same. ")
 print("--"*10)
 
 """
@@ -53,7 +83,6 @@ Write a program which asks user "what's your name?".
 Based on the user's input, the program should ask "How old are you, ***?" in which *** is the user's name.
 Then print "You can vote" or "Please come back in XX years" based on user's age 
 (XX is the number of years that user need to wait before getting 18 years old).
-
 The process of your program should be: 
 -----------First test case-----------
 what's your name?
@@ -69,6 +98,18 @@ How old are you, Anna?
 Please come back in 2 years
  """
 
+voter_name = input("What's your name? ")
+voter_age = input("How old are you, " + voter_name)
+
+def legal_voting_age():
+
+    if int(voter_age) >= 18:
+        print("You can vote.")
+    if int(voter_age) < 18:
+        years_left = 18 - int(voter_age)
+        print("Come back in {0} years." .format(years_left))
+
+legal_voting_age()
+
+
 print("--"*10)
-
-
