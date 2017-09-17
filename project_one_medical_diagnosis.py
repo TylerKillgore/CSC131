@@ -41,12 +41,31 @@ def get_patient_diagnosis():
 
 
 patient_name = input("Patient Name: ")
-patient_date = input("Month Day (e.g., 3 25): ")
-patient_temperature = float(input("Temperature: "))
-patient_congestion = input("Congestion (y,n): ")
-patient_aches = input("Aches (y,n): ")
-patient_rash = input("Rash (y,n): ")
 
+patient_date = input("Month Day (e.g., 3 25): ")
+if len(patient_date) > 5:
+    print("Error.")
+    exit()
+patient_temperature = float(input("Temperature: "))
+
+patient_congestion = input("Congestion (y,n): ")
+if patient_congestion in ["y", "Y", "n", "N"]:
+    ()
+else:
+    print("Error.")
+    exit()
+patient_aches = input("Aches (y,n): ")
+if patient_aches in ["y", "Y", "n", "N"]:
+    ()
+else:
+    print("Error.")
+    exit()
+patient_rash = input("Rash (y,n): ")
+if patient_rash in ["y", "Y", "n", "N"]:
+    ()
+else:
+    print("Error.")
+    exit()
 
 # slice numbers from input for date output of month/day/year, checking for whether m or mm
 
@@ -57,7 +76,7 @@ if len(patient_date) < 5:
 else:
     date_month = patient_date[0:2]
     date_day = patient_date[3:5]
-    return_date = "{}/{}/2017".format(date_month, int(date_day) +2)
+    return_date = "{}/{}/2017".format(date_month, int(date_day) + 2)
 # response following program run
 print()
 print()
