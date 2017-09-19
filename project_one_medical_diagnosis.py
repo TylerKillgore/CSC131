@@ -157,15 +157,15 @@ def get_patient_diagnosis():
     if ((int(patient_temperature) < 99) and (patient_congestion == "n" or "N") and (patient_aches == "n" or "N") \
             and (patient_rash == "n" or "N")):
         diagnosis = "Healthy";
-    elif (int(patient_temperature) < 100) and (patient_congestion == "y" or "Y") and (patient_aches == "n" or "N") \
-            and (patient_rash == "n" or "N"):
+    elif ((int(patient_temperature) < 100) and (patient_congestion == "y" or "Y") and (patient_aches == "n" or "N") \
+            and (patient_rash == "n" or "N")):
         diagnosis = "Cold";
-    elif ((int(patient_temperature) >= 100) and (patient_congestion == "n" or "N") and (patient_aches == "y" or "Y")
+    elif ((int(patient_temperature) >= 100) and (patient_congestion == "n" or "N") and (patient_aches == "y" or "Y")\
           and (patient_rash == "n" or "N")):
-                    diagnosis = "Flu";
-    elif (int(patient_temperature) >= 100 and (patient_congestion == "n" or "N") and (patient_aches == "n" or "N")
-        and (patient_rash == "y" or "Y")):
-                    diagnosis = "Measles";
+                diagnosis = "Flu";
+    elif (int(patient_temperature) >= 100) and (patient_congestion == "n" or "N") and (patient_aches == "n" or "N")\
+            and (patient_rash == "y" or "Y"):
+                diagnosis = "Measles";
     else:
                 diagnosis = "Uncertain";
 
@@ -187,21 +187,21 @@ def get_returns():
 
 
     if int(month) == 12 and int(day) >= 30:
-        return_year = "2018"
+        return_year = "2018";
     else:
-        return_year = "2017"
+        return_year = "2017";
     # All months with 31 days
     if int(month) in [1, 3, 5, 7, 8, 10]:
-        thirty_one_day_month()
+        thirty_one_day_month();
     # All months with 30 days
     elif int(month) in [4, 6, 9, 11]:
-        thirty_day_month()
+        thirty_day_month();
 # Months with 28 days (only February)
     elif int(month) == 2:
-        february_month()
+        february_month();
 # December
     elif int(month) == 12:
-        december_month()
+        december_month();
 
 
 
