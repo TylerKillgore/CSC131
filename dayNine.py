@@ -47,7 +47,10 @@ def draw_a_rectangle_of_plus(xlength, ylength):
         +++++
     There is no explicit return value for this function
     """
-
+    for i in range(xlength):
+        for j in range(ylength):
+            print("+", end="")
+        print()
 
 def draw_a_trangle_of_plus(n):
     """
@@ -62,6 +65,9 @@ def draw_a_trangle_of_plus(n):
         ++++
     There is no explicit return value for this function
     """
+    for i in range(n):
+        print(i * "+")
+
 
 def count_i_j_in_string(str):
     """
@@ -71,6 +77,14 @@ def count_i_j_in_string(str):
     (You do not need to count the upper cases)
     The return value should be the occurrences as an integer.
     """
+
+    if len(str) == 0:
+        print("0")
+    else:
+        sentence = str
+        number = sentence.count("i") + sentence.count("j")
+        print(number)
+
 
 # ------------The code below is for testing purpose----------------------
 
@@ -100,5 +114,4 @@ print(count_i_j_in_string("python"))
 print(count_i_j_in_string('''
 A Right Triangle's Hypotenuse. The hypotenuse is the largest side in a right triangle and is always opposite the right angle.
 '''))
-
 
