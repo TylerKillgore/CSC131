@@ -15,11 +15,8 @@ def draw_an_isosceles_trangle_of_plus(n):
     There is no explicit return value for this function
     """
     count = 0
-    white_space = 0
     while count <= n:
-        white_space = (n - count) / 2
-        white_space = " " * int(white_space)
-        print(white_space + ("+" * count) + white_space, end="")
+        print("+" * count, end="")
         count += 1
         print()
 
@@ -34,11 +31,11 @@ def count_upper_letters(str):
     count = 0
     upper_case_letters = 0
 
-    while count < len(str) + 1:
-        if char
+    for i in str:
+        if i.isupper():
             upper_case_letters += 1
         count += 1
-    print(count)
+    print(upper_case_letters)
 
 
 def you_are_taking_csc131():
@@ -56,6 +53,15 @@ def you_are_taking_csc131():
     """
     input_has_131 = False
 
+    while input_has_131 == False:
+        course_name = input("What course are you taking semester? ")
+
+        if ("csc" or "CSC" and "131") in course_name:
+                input_has_131 = True
+
+        else:
+                print()
+    print("I knew it!")
 
 def string_of_vowels(str):
     """
@@ -65,6 +71,20 @@ def string_of_vowels(str):
     For example, if the input parameter is "Casablanca", the return value should be "aaaa".
     Be careful: you should count the vowels a, e, i, o, u and their upper letters
     """
+
+    count = 0
+
+    for i in str:
+        if i.islower():
+            if i in "aeiou":
+                print(i, end="")
+
+        elif i.isupper():
+            if i in "AEIOU":
+                print(i, end="")
+    print()
+
+
 
 # test for Q1
 draw_an_isosceles_trangle_of_plus(10)
