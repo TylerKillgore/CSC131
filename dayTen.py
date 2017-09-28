@@ -14,10 +14,12 @@ def draw_an_isosceles_trangle_of_plus(n):
         +++++++
     There is no explicit return value for this function
     """
-    count = 0
-    while count <= n:
-        print("+" * count, end="")
-        count += 1
+    for i in range(n):
+        for j in range(n-i-1):
+            print(" ", end="")
+        for k in range(1+2*i):
+            print("+", end="")
+
         print()
 
 def count_upper_letters(str):
@@ -53,7 +55,7 @@ def you_are_taking_csc131():
     """
     input_has_131 = False
 
-    while input_has_131 == False:
+    while not input_has_131:
         course_name = input("What course are you taking semester? ")
 
         if ("csc" or "CSC" and "131") in course_name:
