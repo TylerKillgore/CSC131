@@ -2,6 +2,7 @@
 # Tyler Killgore
 import random
 
+
 def number_guessing_game(max):
     """
     01. A number guessing game with loop
@@ -32,7 +33,20 @@ def number_guessing_game(max):
     Hint: use random.randomint(min,max) to create the random number.
     Hint: to test whether your program behaves correctly, you can print the random number when you are testing.
     """
-
+    random_number = random.randint(1, max)
+    answer = False
+    while not answer:
+        guess = int(input("Guess a number between 1 and %d: " % max))
+        if guess == 0:
+            print("Not a good guess")
+            answer = True
+        if guess < int(random_number):
+            print("Try a larger number.")
+        if guess > int(random_number):
+            print("Try a smaller number.")
+        if guess == int(random_number):
+            print("Correct.")
+            answer = True
 
 def process_ip_address(ip_string):
     """
@@ -61,16 +75,17 @@ def process_ip_address(ip_string):
         if i == ".":
             current_segment_length = 0
             segment_counter += 1
-    print(segment_counter)
-    
+    print("Segment Length: " + current_segment_length, "Segments: " + segment_counter)
+
+
 # test for Q1
 number_guessing_game(10)
 
-print("--"*10)
+print("--" * 10)
 
 # test for Q2
 process_ip_address("10.0.123456.255")
-print("--"*10)
+print("--" * 10)
 process_ip_address("172.16")
-print("--"*10)
+print("--" * 10)
 process_ip_address("225")
