@@ -1,2 +1,2 @@
-# CSC131
-Python Basics for CS Class
+# Learning Python
+Python Basics
